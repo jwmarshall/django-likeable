@@ -1,8 +1,6 @@
 django-likeable
 ===============
 
-Modified version of django-likeable by Thane Thomson: https://github.com/thanethomson/django-likeable
-
 Adds "liking" functionality which aims to be scale-friendly
 (see `django-nonrel <http://www.allbuttonspressed.com/projects/django-nonrel>`_)
 by favouring abstract classes instead of direct class inheritance when
@@ -12,11 +10,22 @@ facilitating liking. Allows liking of any model registered with the
 Note that this app is not yet tested at scale, but will be at some point in the
 near future. In the meantime, it simply adds "liking" functionality to your models.
 
+Disclaimer
+----------
+
+This is a modified version of django-likeable by Thane Thomson. I've added a
+template tag to generate simple clickable like badges, checks if a user has already
+liked this object, and relevant javascripts to support ajax.
+
+https://github.com/thanethomson/django-likeable
+
+
 Quick Installation
 ------------------
 1. Add the ``django-likeable`` app to your Python path.
 2. Add ``likeable`` to your list of ``INSTALLED_APPS`` in your project settings.
-3. Create your likeable model:
+3. Collect static files ``python manage.py collectstatic``
+4. Create your likeable model:
 
 ::
 
@@ -110,4 +119,14 @@ Other Batteries Included
 On success, this shortcut function will return a tuple containing first the
 content type ID primary key as well as the object's primary key, which can
 then simply be passed to one of the ``django-likeable`` views.
+
+``{% load likeable_tags %}``
+
+Tags and filters for dealing with likeable objects.
+
+``{% likeable_badge obj %}``
+
+A simple badge link for likeable objects. Ajax is supported, but you'll need to include 
+your own jquery libraries, then include ``STATIC/js/csrf.js`` and ``STATIC/js/likeable.js``
+in your templates.
 
