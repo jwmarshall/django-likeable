@@ -1,6 +1,6 @@
 $('a.likeable').click(function(e) {
   e.preventDefault();
-  var self = this;
+  var self = $(this);
   $.ajax({
     type: 'POST',
     url: self.attr('href'),
