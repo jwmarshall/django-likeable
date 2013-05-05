@@ -30,7 +30,14 @@ def like(request, content_type_id, object_id):
     obj = get_object_or_404(content_type.model_class(), pk=object_id)
 
     # generate a like by this user for the content object
-    like = Like.objects.create(user=request.user, liked=obj)
+    try:
+      like = Like.objects.create(user=request.user, liked=obj)
+    except IntegrityError:
+      # integrity error triggered when user has already liked object
+      like = Like.objects.get(user=request.user, content_type_id=content_type_id, object_id=object_id)
+
+    # return like for use in ajax response
+    return like
 
 
 
