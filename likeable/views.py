@@ -47,7 +47,7 @@ def generate_back_url(request, default=settings.DEFAULT_LIKE_BACK_URL):
     Inspired by http://stackoverflow.com/questions/3552303/how-can-i-make-a-url-link-in-django-that-will-go-to-the-referring-view
     """
 
-    url = request.META.get('REFERER', default)
+    url = request.META.get('HTTP_REFERER', default)
     parsed = urlparse(url)
     try:
         urlresolvers.resolve(parsed.path)
