@@ -67,10 +67,11 @@ def like_ajax(request, content_type_id, object_id):
     """ 
 
     # generate the like for the object
-    like(request, content_type_id, object_id)
+    l = like(request, content_type_id, object_id)
+    counter = l.liked.likes.count()
 
     # return an AJAX response
-    return HttpResponse(json.dumps({'success': True}), mimetype='application/javascript')
+    return HttpResponse(json.dumps({'success': True, 'counter': counter}), mimetype='application/javascript')
 
 
 
