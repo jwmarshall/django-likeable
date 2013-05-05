@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-likeable',
-    version='0.0.2',
+    version='0.0.3',
     description='Simple Django app to facilitate "liking" of any content type.',
     long_description=open('README.rst', 'rt').read(),
     author='Jonathon Marshall, originally forked from Thane Thomson\'s django-likeable',
