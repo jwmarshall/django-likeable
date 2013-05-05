@@ -1,6 +1,8 @@
 django-likeable
 ===============
 
+Modified version of django-likeable by Thane Thomson: https://github.com/thanethomson/django-likeable
+
 Adds "liking" functionality which aims to be scale-friendly
 (see `django-nonrel <http://www.allbuttonspressed.com/projects/django-nonrel>`_)
 by favouring abstract classes instead of direct class inheritance when
