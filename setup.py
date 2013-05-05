@@ -9,13 +9,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-likeable',
-    version='0.0.1',
+    version='0.0.2',
     description='Simple Django app to facilitate "liking" of any content type.',
     long_description=open('README.rst', 'rt').read(),
-    author='Thane Thomson',
-    author_email='connect@thanethomson.com',
+    author='Jonathon Marshall, originally forked from Thane Thomson\'s django-likeable',
+    author_email='jwm@fishingfury.com',
     license='Apache',
-    url='https://github.com/thanethomson/django-likeable',
+    url='https://github.com/jwmarshall/django-likeable',
     packages=find_packages(),
     include_package_data=True,
     classifiers = [
