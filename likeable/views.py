@@ -12,6 +12,7 @@ except ImportError:
 from models import Like
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.decorators import login_required
+from django.db import IntegrityError
 from django.shortcuts import get_object_or_404
 import settings
 
